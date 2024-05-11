@@ -1,7 +1,7 @@
 # Domain Adaptation in High-Resolution Satellite Images using Deep Learning
 Repo Containing our work and Implementation for CS444 at UIUC
 
-Reproduction of FastCUT to Domain Adapt WHU-Building Dataset to Inria Ariel Dataset:
+Reproduction and changes to FastCUT to Domain Adapt WHU-Building Dataset to Inria Ariel Dataset:
 
 https://github.com/taesungp/contrastive-unpaired-translation
 Taesung Park et al. “Contrastive Learning for Unpaired Image-to-Image Translation”. In:
