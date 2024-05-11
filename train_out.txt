@@ -1,0 +1,701 @@
+dataset [UnalignedDataset] was created
+model [CUTModel] was created
+The number of training images = 204
+E:\Personal_Stuff\UIUC\Sem_2\DL_for_CV_(CS_444)\Project\Code\contrastive-unpaired-translation\models\networks.py:569: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  patch_id = torch.tensor(patch_id, dtype=torch.long, device=feat.device)
+---------- Networks initialized -------------
+ResnetGenerator(
+  (model): Sequential(
+    (0): ReflectionPad2d((3, 3, 3, 3))
+    (1): Conv2d(3, 64, kernel_size=(7, 7), stride=(1, 1))
+    (2): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (3): ReLU(inplace=True)
+    (4): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (5): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (6): ReLU(inplace=True)
+    (7): Downsample(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+    )
+    (8): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (9): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (10): ReLU(inplace=True)
+    (11): Downsample(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+    )
+    (12): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (13): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (14): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (15): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (16): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (17): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (18): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (19): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (20): ResnetBlock(
+      (conv_block): Sequential(
+        (0): ReflectionPad2d((1, 1, 1, 1))
+        (1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (2): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (3): ReLU(inplace=True)
+        (4): ReflectionPad2d((1, 1, 1, 1))
+        (5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (6): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      )
+    )
+    (21): Upsample(
+      (pad): ReplicationPad2d((1, 1, 1, 1))
+    )
+    (22): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (23): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (24): ReLU(inplace=True)
+    (25): Upsample(
+      (pad): ReplicationPad2d((1, 1, 1, 1))
+    )
+    (26): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (28): ReLU(inplace=True)
+    (29): ReflectionPad2d((3, 3, 3, 3))
+    (30): Conv2d(64, 3, kernel_size=(7, 7), stride=(1, 1))
+    (31): Tanh()
+  )
+)
+[Network G] Total number of parameters : 11.378 M
+PatchSampleF(
+  (l2norm): Normalize()
+  (mlp_0): Sequential(
+    (0): Linear(in_features=3, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mlp_1): Sequential(
+    (0): Linear(in_features=128, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mlp_2): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mlp_3): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (mlp_4): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=256, out_features=256, bias=True)
+  )
+)
+[Network F] Total number of parameters : 0.560 M
+NLayerDiscriminator(
+  (model): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Downsample(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+    )
+    (3): Conv2d(64, 128, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    (4): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (5): LeakyReLU(negative_slope=0.2, inplace=True)
+    (6): Downsample(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+    )
+    (7): Conv2d(128, 256, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    (8): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (9): LeakyReLU(negative_slope=0.2, inplace=True)
+    (10): Downsample(
+      (pad): ReflectionPad2d((1, 1, 1, 1))
+    )
+    (11): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    (12): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+    (14): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+  )
+)
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+(epoch: 1, iters: 100, time: 0.235, data: 11.805) G_GAN: 0.451 D_real: 0.280 D_fake: 0.258 G: 10.758 NCE: 10.307 step: 100.000 epoch: 1.000 
+OrderedDict([('G_GAN', 0.45121660828590393), ('D_real', 0.2796793580055237), ('D_fake', 0.25794947147369385), ('G', 10.757932662963867), ('NCE', 10.306715965270996), ('step', 100), ('epoch', 1)])
+(epoch: 1, iters: 200, time: 0.300, data: 0.001) G_GAN: 1.076 D_real: 0.135 D_fake: 0.310 G: 11.107 NCE: 10.032 step: 200.000 epoch: 1.000 
+OrderedDict([('G_GAN', 1.075774908065796), ('D_real', 0.13463330268859863), ('D_fake', 0.3099876046180725), ('G', 11.10749340057373), ('NCE', 10.031718254089355), ('step', 200), ('epoch', 1)])
+End of epoch 1 / 80      Time Taken: 99 sec
+learning rate = 0.0002000
+(epoch: 2, iters: 96, time: 0.340, data: 0.001) G_GAN: 0.346 D_real: 0.684 D_fake: 0.139 G: 10.589 NCE: 10.242 step: 300.000 epoch: 2.000 
+OrderedDict([('G_GAN', 0.3461560904979706), ('D_real', 0.6844462156295776), ('D_fake', 0.13879166543483734), ('G', 10.588519096374512), ('NCE', 10.242362976074219), ('step', 300), ('epoch', 2)])
+(epoch: 2, iters: 196, time: 0.364, data: 0.001) G_GAN: 0.918 D_real: 0.026 D_fake: 0.111 G: 12.162 NCE: 11.243 step: 400.000 epoch: 2.000 
+OrderedDict([('G_GAN', 0.9184056520462036), ('D_real', 0.026360023766756058), ('D_fake', 0.1108388677239418), ('G', 12.161725997924805), ('NCE', 11.24332046508789), ('step', 400), ('epoch', 2)])
+End of epoch 2 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 3, iters: 92, time: 0.379, data: 0.001) G_GAN: 0.431 D_real: 0.256 D_fake: 0.229 G: 11.689 NCE: 11.258 step: 500.000 epoch: 3.000 
+OrderedDict([('G_GAN', 0.4312799572944641), ('D_real', 0.2564018666744232), ('D_fake', 0.22873176634311676), ('G', 11.68919849395752), ('NCE', 11.257918357849121), ('step', 500), ('epoch', 3)])
+(epoch: 3, iters: 192, time: 0.387, data: 0.001) G_GAN: 0.281 D_real: 0.327 D_fake: 0.256 G: 11.967 NCE: 11.686 step: 600.000 epoch: 3.000 
+OrderedDict([('G_GAN', 0.2811598777770996), ('D_real', 0.32658907771110535), ('D_fake', 0.25605902075767517), ('G', 11.967496871948242), ('NCE', 11.6863374710083), ('step', 600), ('epoch', 3)])
+End of epoch 3 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 4, iters: 88, time: 0.393, data: 0.001) G_GAN: 0.270 D_real: 0.283 D_fake: 0.235 G: 11.514 NCE: 11.244 step: 700.000 epoch: 4.000 
+OrderedDict([('G_GAN', 0.2696804404258728), ('D_real', 0.2828785181045532), ('D_fake', 0.23461812734603882), ('G', 11.513736724853516), ('NCE', 11.244056701660156), ('step', 700), ('epoch', 4)])
+(epoch: 4, iters: 188, time: 0.396, data: 0.001) G_GAN: 0.299 D_real: 0.212 D_fake: 0.243 G: 11.835 NCE: 11.536 step: 800.000 epoch: 4.000 
+OrderedDict([('G_GAN', 0.2987092435359955), ('D_real', 0.21174170076847076), ('D_fake', 0.24279135465621948), ('G', 11.834945678710938), ('NCE', 11.536236763000488), ('step', 800), ('epoch', 4)])
+End of epoch 4 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 5, iters: 84, time: 0.399, data: 0.001) G_GAN: 0.307 D_real: 0.228 D_fake: 0.309 G: 12.315 NCE: 12.008 step: 900.000 epoch: 5.000 
+OrderedDict([('G_GAN', 0.30660802125930786), ('D_real', 0.2281646877527237), ('D_fake', 0.3086180090904236), ('G', 12.314637184143066), ('NCE', 12.008028984069824), ('step', 900), ('epoch', 5)])
+(epoch: 5, iters: 184, time: 0.400, data: 0.001) G_GAN: 0.283 D_real: 0.316 D_fake: 0.199 G: 9.772 NCE: 9.489 step: 1000.000 epoch: 5.000 
+OrderedDict([('G_GAN', 0.2830314636230469), ('D_real', 0.315680593252182), ('D_fake', 0.19878575205802917), ('G', 9.772082328796387), ('NCE', 9.48905086517334), ('step', 1000), ('epoch', 5)])
+End of epoch 5 / 80      Time Taken: 94 sec
+learning rate = 0.0002000
+(epoch: 6, iters: 80, time: 0.401, data: 0.002) G_GAN: 0.255 D_real: 0.274 D_fake: 0.259 G: 12.208 NCE: 11.953 step: 1100.000 epoch: 6.000 
+OrderedDict([('G_GAN', 0.2547486424446106), ('D_real', 0.27363699674606323), ('D_fake', 0.25870415568351746), ('G', 12.208030700683594), ('NCE', 11.953282356262207), ('step', 1100), ('epoch', 6)])
+(epoch: 6, iters: 180, time: 0.401, data: 0.001) G_GAN: 0.231 D_real: 0.294 D_fake: 0.232 G: 8.970 NCE: 8.739 step: 1200.000 epoch: 6.000 
+OrderedDict([('G_GAN', 0.23143135011196136), ('D_real', 0.2939397096633911), ('D_fake', 0.2318231761455536), ('G', 8.969949722290039), ('NCE', 8.738518714904785), ('step', 1200), ('epoch', 6)])
+End of epoch 6 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 7, iters: 76, time: 0.401, data: 0.001) G_GAN: 0.420 D_real: 0.180 D_fake: 0.229 G: 8.828 NCE: 8.408 step: 1300.000 epoch: 7.000 
+OrderedDict([('G_GAN', 0.41993579268455505), ('D_real', 0.18014775216579437), ('D_fake', 0.22934669256210327), ('G', 8.828335762023926), ('NCE', 8.40839958190918), ('step', 1300), ('epoch', 7)])
+(epoch: 7, iters: 176, time: 0.401, data: 0.001) G_GAN: 0.278 D_real: 0.212 D_fake: 0.282 G: 9.072 NCE: 8.794 step: 1400.000 epoch: 7.000 
+OrderedDict([('G_GAN', 0.2779054045677185), ('D_real', 0.21239599585533142), ('D_fake', 0.28244930505752563), ('G', 9.071746826171875), ('NCE', 8.793841361999512), ('step', 1400), ('epoch', 7)])
+End of epoch 7 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 8, iters: 72, time: 0.402, data: 0.001) G_GAN: 0.346 D_real: 0.297 D_fake: 0.194 G: 12.323 NCE: 11.977 step: 1500.000 epoch: 8.000 
+OrderedDict([('G_GAN', 0.34620824456214905), ('D_real', 0.2970653176307678), ('D_fake', 0.19352641701698303), ('G', 12.323478698730469), ('NCE', 11.977270126342773), ('step', 1500), ('epoch', 8)])
+(epoch: 8, iters: 172, time: 0.401, data: 0.001) G_GAN: 0.212 D_real: 0.264 D_fake: 0.311 G: 12.681 NCE: 12.469 step: 1600.000 epoch: 8.000 
+OrderedDict([('G_GAN', 0.21227405965328217), ('D_real', 0.26402974128723145), ('D_fake', 0.3114517331123352), ('G', 12.680907249450684), ('NCE', 12.468633651733398), ('step', 1600), ('epoch', 8)])
+End of epoch 8 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 9, iters: 68, time: 0.401, data: 0.001) G_GAN: 0.329 D_real: 0.263 D_fake: 0.237 G: 7.545 NCE: 7.215 step: 1700.000 epoch: 9.000 
+OrderedDict([('G_GAN', 0.3291124403476715), ('D_real', 0.2629798948764801), ('D_fake', 0.2371966391801834), ('G', 7.544556617736816), ('NCE', 7.215444087982178), ('step', 1700), ('epoch', 9)])
+(epoch: 9, iters: 168, time: 0.401, data: 0.001) G_GAN: 0.309 D_real: 0.274 D_fake: 0.227 G: 12.848 NCE: 12.538 step: 1800.000 epoch: 9.000 
+OrderedDict([('G_GAN', 0.30933108925819397), ('D_real', 0.27421194314956665), ('D_fake', 0.22655901312828064), ('G', 12.847615242004395), ('NCE', 12.538284301757812), ('step', 1800), ('epoch', 9)])
+End of epoch 9 / 80      Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 10, iters: 64, time: 0.402, data: 0.001) G_GAN: 0.271 D_real: 0.352 D_fake: 0.141 G: 9.022 NCE: 8.752 step: 1900.000 epoch: 10.000 
+OrderedDict([('G_GAN', 0.2705787718296051), ('D_real', 0.3523479104042053), ('D_fake', 0.14136730134487152), ('G', 9.022405624389648), ('NCE', 8.751827239990234), ('step', 1900), ('epoch', 10)])
+(epoch: 10, iters: 164, time: 0.402, data: 0.001) G_GAN: 0.220 D_real: 0.455 D_fake: 0.109 G: 8.056 NCE: 7.836 step: 2000.000 epoch: 10.000 
+OrderedDict([('G_GAN', 0.22004877030849457), ('D_real', 0.4551193416118622), ('D_fake', 0.10873591154813766), ('G', 8.056446075439453), ('NCE', 7.836397647857666), ('step', 2000), ('epoch', 10)])
+End of epoch 10 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 11, iters: 60, time: 0.402, data: 0.001) G_GAN: 0.338 D_real: 0.252 D_fake: 0.230 G: 7.466 NCE: 7.128 step: 2100.000 epoch: 11.000 
+OrderedDict([('G_GAN', 0.3376707136631012), ('D_real', 0.25150370597839355), ('D_fake', 0.230088010430336), ('G', 7.466104030609131), ('NCE', 7.1284332275390625), ('step', 2100), ('epoch', 11)])
+(epoch: 11, iters: 160, time: 0.402, data: 0.001) G_GAN: 0.297 D_real: 0.123 D_fake: 0.269 G: 7.436 NCE: 7.139 step: 2200.000 epoch: 11.000 
+OrderedDict([('G_GAN', 0.2972828149795532), ('D_real', 0.12347780168056488), ('D_fake', 0.26909735798835754), ('G', 7.435836315155029), ('NCE', 7.138553619384766), ('step', 2200), ('epoch', 11)])
+End of epoch 11 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 12, iters: 56, time: 0.402, data: 0.001) G_GAN: 0.324 D_real: 0.399 D_fake: 0.228 G: 7.117 NCE: 6.793 step: 2300.000 epoch: 12.000 
+OrderedDict([('G_GAN', 0.3238726258277893), ('D_real', 0.3986418843269348), ('D_fake', 0.2282601296901703), ('G', 7.117157459259033), ('NCE', 6.793284893035889), ('step', 2300), ('epoch', 12)])
+(epoch: 12, iters: 156, time: 0.401, data: 0.001) G_GAN: 0.401 D_real: 0.120 D_fake: 0.231 G: 7.407 NCE: 7.006 step: 2400.000 epoch: 12.000 
+OrderedDict([('G_GAN', 0.4006723165512085), ('D_real', 0.11990442872047424), ('D_fake', 0.23108652234077454), ('G', 7.407134532928467), ('NCE', 7.006462097167969), ('step', 2400), ('epoch', 12)])
+End of epoch 12 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 13, iters: 52, time: 0.402, data: 0.001) G_GAN: 0.368 D_real: 0.279 D_fake: 0.167 G: 12.730 NCE: 12.363 step: 2500.000 epoch: 13.000 
+OrderedDict([('G_GAN', 0.36753714084625244), ('D_real', 0.27856582403182983), ('D_fake', 0.16675415635108948), ('G', 12.730291366577148), ('NCE', 12.362753868103027), ('step', 2500), ('epoch', 13)])
+(epoch: 13, iters: 152, time: 0.401, data: 0.001) G_GAN: 0.296 D_real: 0.229 D_fake: 0.189 G: 6.358 NCE: 6.062 step: 2600.000 epoch: 13.000 
+OrderedDict([('G_GAN', 0.29564031958580017), ('D_real', 0.22914497554302216), ('D_fake', 0.18879583477973938), ('G', 6.357521057128906), ('NCE', 6.061880588531494), ('step', 2600), ('epoch', 13)])
+End of epoch 13 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 14, iters: 48, time: 0.401, data: 0.001) G_GAN: 0.303 D_real: 0.328 D_fake: 0.192 G: 12.014 NCE: 11.711 step: 2700.000 epoch: 14.000 
+OrderedDict([('G_GAN', 0.30299103260040283), ('D_real', 0.32821860909461975), ('D_fake', 0.19169072806835175), ('G', 12.014217376708984), ('NCE', 11.711226463317871), ('step', 2700), ('epoch', 14)])
+(epoch: 14, iters: 148, time: 0.401, data: 0.001) G_GAN: 0.282 D_real: 0.302 D_fake: 0.182 G: 13.620 NCE: 13.337 step: 2800.000 epoch: 14.000 
+OrderedDict([('G_GAN', 0.28229910135269165), ('D_real', 0.3021685779094696), ('D_fake', 0.18174894154071808), ('G', 13.619586944580078), ('NCE', 13.337287902832031), ('step', 2800), ('epoch', 14)])
+End of epoch 14 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 15, iters: 44, time: 0.401, data: 0.001) G_GAN: 0.515 D_real: 0.069 D_fake: 0.431 G: 14.997 NCE: 14.481 step: 2900.000 epoch: 15.000 
+OrderedDict([('G_GAN', 0.5153952240943909), ('D_real', 0.06932445615530014), ('D_fake', 0.4305960536003113), ('G', 14.996880531311035), ('NCE', 14.481485366821289), ('step', 2900), ('epoch', 15)])
+(epoch: 15, iters: 144, time: 0.401, data: 0.001) G_GAN: 0.336 D_real: 0.140 D_fake: 0.337 G: 6.348 NCE: 6.011 step: 3000.000 epoch: 15.000 
+OrderedDict([('G_GAN', 0.3363264501094818), ('D_real', 0.13996922969818115), ('D_fake', 0.3367159068584442), ('G', 6.347671985626221), ('NCE', 6.011345386505127), ('step', 3000), ('epoch', 15)])
+End of epoch 15 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 16, iters: 40, time: 0.401, data: 0.001) G_GAN: 0.375 D_real: 0.093 D_fake: 0.283 G: 12.584 NCE: 12.210 step: 3100.000 epoch: 16.000 
+OrderedDict([('G_GAN', 0.37450069189071655), ('D_real', 0.09341418743133545), ('D_fake', 0.28260695934295654), ('G', 12.584136009216309), ('NCE', 12.209635734558105), ('step', 3100), ('epoch', 16)])
+(epoch: 16, iters: 140, time: 0.401, data: 0.001) G_GAN: 0.465 D_real: 0.213 D_fake: 0.089 G: 6.960 NCE: 6.494 step: 3200.000 epoch: 16.000 
+OrderedDict([('G_GAN', 0.46533167362213135), ('D_real', 0.2131059318780899), ('D_fake', 0.08921333402395248), ('G', 6.95980167388916), ('NCE', 6.494470119476318), ('step', 3200), ('epoch', 16)])
+End of epoch 16 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 17, iters: 36, time: 0.402, data: 0.001) G_GAN: 0.586 D_real: 0.075 D_fake: 0.348 G: 13.600 NCE: 13.015 step: 3300.000 epoch: 17.000 
+OrderedDict([('G_GAN', 0.5856641530990601), ('D_real', 0.07539698481559753), ('D_fake', 0.34813493490219116), ('G', 13.600200653076172), ('NCE', 13.01453685760498), ('step', 3300), ('epoch', 17)])
+(epoch: 17, iters: 136, time: 0.401, data: 0.001) G_GAN: 0.241 D_real: 0.249 D_fake: 0.180 G: 12.464 NCE: 12.223 step: 3400.000 epoch: 17.000 
+OrderedDict([('G_GAN', 0.24070501327514648), ('D_real', 0.24863451719284058), ('D_fake', 0.18037597835063934), ('G', 12.463926315307617), ('NCE', 12.223220825195312), ('step', 3400), ('epoch', 17)])
+End of epoch 17 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 18, iters: 32, time: 0.402, data: 0.001) G_GAN: 0.455 D_real: 0.183 D_fake: 0.082 G: 13.832 NCE: 13.376 step: 3500.000 epoch: 18.000 
+OrderedDict([('G_GAN', 0.45525166392326355), ('D_real', 0.1829153597354889), ('D_fake', 0.08150812238454819), ('G', 13.831551551818848), ('NCE', 13.376299858093262), ('step', 3500), ('epoch', 18)])
+(epoch: 18, iters: 132, time: 0.402, data: 0.001) G_GAN: 0.485 D_real: 0.166 D_fake: 0.295 G: 12.577 NCE: 12.092 step: 3600.000 epoch: 18.000 
+OrderedDict([('G_GAN', 0.4850217401981354), ('D_real', 0.16619646549224854), ('D_fake', 0.2954697906970978), ('G', 12.577169418334961), ('NCE', 12.092147827148438), ('step', 3600), ('epoch', 18)])
+End of epoch 18 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 19, iters: 28, time: 0.402, data: 0.001) G_GAN: 0.457 D_real: 0.275 D_fake: 0.149 G: 6.723 NCE: 6.266 step: 3700.000 epoch: 19.000 
+OrderedDict([('G_GAN', 0.4571046233177185), ('D_real', 0.27520155906677246), ('D_fake', 0.14929287135601044), ('G', 6.722979545593262), ('NCE', 6.265874862670898), ('step', 3700), ('epoch', 19)])
+(epoch: 19, iters: 128, time: 0.401, data: 0.001) G_GAN: 0.647 D_real: 0.143 D_fake: 0.187 G: 12.635 NCE: 11.988 step: 3800.000 epoch: 19.000 
+OrderedDict([('G_GAN', 0.6471219062805176), ('D_real', 0.1430295705795288), ('D_fake', 0.1866825819015503), ('G', 12.635019302368164), ('NCE', 11.987897872924805), ('step', 3800), ('epoch', 19)])
+End of epoch 19 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 20, iters: 24, time: 0.401, data: 0.001) G_GAN: 0.245 D_real: 0.372 D_fake: 0.181 G: 12.722 NCE: 12.477 step: 3900.000 epoch: 20.000 
+OrderedDict([('G_GAN', 0.245223730802536), ('D_real', 0.3724803626537323), ('D_fake', 0.1806405931711197), ('G', 12.722044944763184), ('NCE', 12.476820945739746), ('step', 3900), ('epoch', 20)])
+(epoch: 20, iters: 124, time: 0.401, data: 0.001) G_GAN: 0.598 D_real: 0.159 D_fake: 0.233 G: 6.245 NCE: 5.647 step: 4000.000 epoch: 20.000 
+OrderedDict([('G_GAN', 0.5982716083526611), ('D_real', 0.15863242745399475), ('D_fake', 0.23274026811122894), ('G', 6.245210647583008), ('NCE', 5.646939277648926), ('step', 4000), ('epoch', 20)])
+End of epoch 20 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 21, iters: 20, time: 0.401, data: 0.001) G_GAN: 0.388 D_real: 0.597 D_fake: 0.082 G: 5.690 NCE: 5.302 step: 4100.000 epoch: 21.000 
+OrderedDict([('G_GAN', 0.3881291151046753), ('D_real', 0.5974342823028564), ('D_fake', 0.08180089294910431), ('G', 5.690016746520996), ('NCE', 5.301887512207031), ('step', 4100), ('epoch', 21)])
+(epoch: 21, iters: 120, time: 0.401, data: 0.001) G_GAN: 0.192 D_real: 0.469 D_fake: 0.183 G: 12.081 NCE: 11.889 step: 4200.000 epoch: 21.000 
+OrderedDict([('G_GAN', 0.19224949181079865), ('D_real', 0.4694117307662964), ('D_fake', 0.18313241004943848), ('G', 12.081177711486816), ('NCE', 11.888928413391113), ('step', 4200), ('epoch', 21)])
+End of epoch 21 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 22, iters: 16, time: 0.402, data: 0.001) G_GAN: 0.523 D_real: 0.042 D_fake: 0.229 G: 5.746 NCE: 5.223 step: 4300.000 epoch: 22.000 
+OrderedDict([('G_GAN', 0.5229112505912781), ('D_real', 0.04172704368829727), ('D_fake', 0.2285728007555008), ('G', 5.746383190155029), ('NCE', 5.2234721183776855), ('step', 4300), ('epoch', 22)])
+(epoch: 22, iters: 116, time: 0.401, data: 0.001) G_GAN: 0.529 D_real: 0.384 D_fake: 0.331 G: 6.140 NCE: 5.611 step: 4400.000 epoch: 22.000 
+OrderedDict([('G_GAN', 0.529387354850769), ('D_real', 0.38361600041389465), ('D_fake', 0.3306562900543213), ('G', 6.140272617340088), ('NCE', 5.610885143280029), ('step', 4400), ('epoch', 22)])
+End of epoch 22 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 23, iters: 12, time: 0.402, data: 0.001) G_GAN: 0.333 D_real: 0.143 D_fake: 0.314 G: 5.478 NCE: 5.145 step: 4500.000 epoch: 23.000 
+OrderedDict([('G_GAN', 0.33309999108314514), ('D_real', 0.1433170884847641), ('D_fake', 0.31402257084846497), ('G', 5.47802734375), ('NCE', 5.144927501678467), ('step', 4500), ('epoch', 23)])
+(epoch: 23, iters: 112, time: 0.402, data: 0.001) G_GAN: 0.377 D_real: 0.601 D_fake: 0.030 G: 5.122 NCE: 4.745 step: 4600.000 epoch: 23.000 
+OrderedDict([('G_GAN', 0.37678539752960205), ('D_real', 0.6005770564079285), ('D_fake', 0.029799900949001312), ('G', 5.122048854827881), ('NCE', 4.745263576507568), ('step', 4600), ('epoch', 23)])
+End of epoch 23 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 24, iters: 8, time: 0.403, data: 0.001) G_GAN: 0.470 D_real: 0.039 D_fake: 0.281 G: 13.457 NCE: 12.988 step: 4700.000 epoch: 24.000 
+OrderedDict([('G_GAN', 0.46950483322143555), ('D_real', 0.039296988397836685), ('D_fake', 0.28145650029182434), ('G', 13.457157135009766), ('NCE', 12.987652778625488), ('step', 4700), ('epoch', 24)])
+(epoch: 24, iters: 108, time: 0.402, data: 0.001) G_GAN: 0.304 D_real: 0.173 D_fake: 0.310 G: 12.571 NCE: 12.268 step: 4800.000 epoch: 24.000 
+OrderedDict([('G_GAN', 0.303741991519928), ('D_real', 0.17259742319583893), ('D_fake', 0.31004077196121216), ('G', 12.57131290435791), ('NCE', 12.267570495605469), ('step', 4800), ('epoch', 24)])
+End of epoch 24 / 80     Time Taken: 94 sec
+learning rate = 0.0002000
+(epoch: 25, iters: 4, time: 0.403, data: 0.001) G_GAN: 0.178 D_real: 0.281 D_fake: 0.184 G: 4.448 NCE: 4.270 step: 4900.000 epoch: 25.000 
+OrderedDict([('G_GAN', 0.17799469828605652), ('D_real', 0.28104352951049805), ('D_fake', 0.18404440581798553), ('G', 4.447577953338623), ('NCE', 4.269583225250244), ('step', 4900), ('epoch', 25)])
+(epoch: 25, iters: 104, time: 0.402, data: 0.002) G_GAN: 0.528 D_real: 0.174 D_fake: 0.121 G: 5.397 NCE: 4.868 step: 5000.000 epoch: 25.000 
+OrderedDict([('G_GAN', 0.5283806324005127), ('D_real', 0.17397522926330566), ('D_fake', 0.12065578997135162), ('G', 5.396561622619629), ('NCE', 4.868180751800537), ('step', 5000), ('epoch', 25)])
+saving the latest model (epoch 25, total_iters 5000)
+DL_for_CV
+dataset [UnalignedDataset] was created
+model [CUTModel] was created
+creating web directory \work_dir_cut\val_results\DL_for_CV\test_latest
+====================================== ['\\work_dir_cut\\val_results\\DL_for_CV\\test_latest\\images', '\\work_dir_cut\\val_results\\DL_for_CV\\test_latest\\WHU']
+(epoch: 25, iters: 204, time: 0.402, data: 0.001) G_GAN: 0.181 D_real: 0.233 D_fake: 0.294 G: 6.040 NCE: 5.859 step: 5100.000 epoch: 25.000 
+OrderedDict([('G_GAN', 0.1812809705734253), ('D_real', 0.23311413824558258), ('D_fake', 0.29415979981422424), ('G', 6.039947986602783), ('NCE', 5.858666896820068), ('step', 5100), ('epoch', 25)])
+End of epoch 25 / 80     Time Taken: 226 sec
+learning rate = 0.0002000
+(epoch: 26, iters: 100, time: 0.401, data: 11.193) G_GAN: 0.422 D_real: 0.175 D_fake: 0.203 G: 13.445 NCE: 13.024 step: 5200.000 epoch: 26.000 
+OrderedDict([('G_GAN', 0.4219229817390442), ('D_real', 0.17508986592292786), ('D_fake', 0.20328541100025177), ('G', 13.445427894592285), ('NCE', 13.023505210876465), ('step', 5200), ('epoch', 26)])
+(epoch: 26, iters: 200, time: 0.401, data: 0.001) G_GAN: 0.685 D_real: 0.082 D_fake: 0.099 G: 12.940 NCE: 12.256 step: 5300.000 epoch: 26.000 
+OrderedDict([('G_GAN', 0.6845674514770508), ('D_real', 0.08176474273204803), ('D_fake', 0.09850876033306122), ('G', 12.940215110778809), ('NCE', 12.255647659301758), ('step', 5300), ('epoch', 26)])
+End of epoch 26 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 27, iters: 96, time: 0.401, data: 0.000) G_GAN: 0.278 D_real: 0.380 D_fake: 0.100 G: 4.607 NCE: 4.329 step: 5400.000 epoch: 27.000 
+OrderedDict([('G_GAN', 0.27770909667015076), ('D_real', 0.38002273440361023), ('D_fake', 0.09996199607849121), ('G', 4.606690406799316), ('NCE', 4.328981399536133), ('step', 5400), ('epoch', 27)])
+(epoch: 27, iters: 196, time: 0.401, data: 0.001) G_GAN: 0.765 D_real: 0.550 D_fake: 0.038 G: 13.051 NCE: 12.286 step: 5500.000 epoch: 27.000 
+OrderedDict([('G_GAN', 0.7649251222610474), ('D_real', 0.5503537058830261), ('D_fake', 0.038260240107774734), ('G', 13.050589561462402), ('NCE', 12.285664558410645), ('step', 5500), ('epoch', 27)])
+End of epoch 27 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 28, iters: 92, time: 0.402, data: 0.001) G_GAN: 0.333 D_real: 0.392 D_fake: 0.179 G: 5.114 NCE: 4.781 step: 5600.000 epoch: 28.000 
+OrderedDict([('G_GAN', 0.3328770697116852), ('D_real', 0.3923305869102478), ('D_fake', 0.17881399393081665), ('G', 5.1143479347229), ('NCE', 4.781470775604248), ('step', 5600), ('epoch', 28)])
+(epoch: 28, iters: 192, time: 0.401, data: 0.001) G_GAN: 0.304 D_real: 0.214 D_fake: 0.355 G: 13.538 NCE: 13.234 step: 5700.000 epoch: 28.000 
+OrderedDict([('G_GAN', 0.3039857745170593), ('D_real', 0.213910311460495), ('D_fake', 0.3550321161746979), ('G', 13.538065910339355), ('NCE', 13.23408031463623), ('step', 5700), ('epoch', 28)])
+End of epoch 28 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 29, iters: 88, time: 0.402, data: 0.001) G_GAN: 0.447 D_real: 0.192 D_fake: 0.274 G: 4.220 NCE: 3.773 step: 5800.000 epoch: 29.000 
+OrderedDict([('G_GAN', 0.4474272131919861), ('D_real', 0.19180472195148468), ('D_fake', 0.2743600308895111), ('G', 4.220012664794922), ('NCE', 3.772585391998291), ('step', 5800), ('epoch', 29)])
+(epoch: 29, iters: 188, time: 0.402, data: 0.001) G_GAN: 0.558 D_real: 0.064 D_fake: 0.223 G: 13.194 NCE: 12.636 step: 5900.000 epoch: 29.000 
+OrderedDict([('G_GAN', 0.5579632520675659), ('D_real', 0.06446550041437149), ('D_fake', 0.22254815697669983), ('G', 13.194000244140625), ('NCE', 12.63603687286377), ('step', 5900), ('epoch', 29)])
+End of epoch 29 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 30, iters: 84, time: 0.403, data: 0.001) G_GAN: 0.164 D_real: 0.278 D_fake: 0.428 G: 4.198 NCE: 4.035 step: 6000.000 epoch: 30.000 
+OrderedDict([('G_GAN', 0.163740873336792), ('D_real', 0.2779378592967987), ('D_fake', 0.42848441004753113), ('G', 4.198356628417969), ('NCE', 4.034615516662598), ('step', 6000), ('epoch', 30)])
+(epoch: 30, iters: 184, time: 0.402, data: 0.001) G_GAN: 0.376 D_real: 0.629 D_fake: 0.099 G: 4.776 NCE: 4.400 step: 6100.000 epoch: 30.000 
+OrderedDict([('G_GAN', 0.37584424018859863), ('D_real', 0.6288612484931946), ('D_fake', 0.0988445058465004), ('G', 4.77573299407959), ('NCE', 4.39988899230957), ('step', 6100), ('epoch', 30)])
+End of epoch 30 / 80     Time Taken: 94 sec
+learning rate = 0.0002000
+(epoch: 31, iters: 80, time: 0.402, data: 0.001) G_GAN: 0.362 D_real: 0.340 D_fake: 0.222 G: 13.605 NCE: 13.243 step: 6200.000 epoch: 31.000 
+OrderedDict([('G_GAN', 0.3624453842639923), ('D_real', 0.34038373827934265), ('D_fake', 0.22217071056365967), ('G', 13.605118751525879), ('NCE', 13.24267292022705), ('step', 6200), ('epoch', 31)])
+(epoch: 31, iters: 180, time: 0.402, data: 0.001) G_GAN: 0.437 D_real: 0.125 D_fake: 0.175 G: 12.637 NCE: 12.200 step: 6300.000 epoch: 31.000 
+OrderedDict([('G_GAN', 0.43748992681503296), ('D_real', 0.12511511147022247), ('D_fake', 0.1752762347459793), ('G', 12.637155532836914), ('NCE', 12.199666023254395), ('step', 6300), ('epoch', 31)])
+End of epoch 31 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 32, iters: 76, time: 0.402, data: 0.001) G_GAN: 0.467 D_real: 0.172 D_fake: 0.310 G: 5.061 NCE: 4.594 step: 6400.000 epoch: 32.000 
+OrderedDict([('G_GAN', 0.4669826626777649), ('D_real', 0.1721317172050476), ('D_fake', 0.31045427918434143), ('G', 5.061028003692627), ('NCE', 4.594045162200928), ('step', 6400), ('epoch', 32)])
+(epoch: 32, iters: 176, time: 0.401, data: 0.001) G_GAN: 0.371 D_real: 0.098 D_fake: 0.191 G: 12.826 NCE: 12.455 step: 6500.000 epoch: 32.000 
+OrderedDict([('G_GAN', 0.3705494701862335), ('D_real', 0.09821783751249313), ('D_fake', 0.19070568680763245), ('G', 12.825923919677734), ('NCE', 12.455374717712402), ('step', 6500), ('epoch', 32)])
+End of epoch 32 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 33, iters: 72, time: 0.402, data: 0.001) G_GAN: 0.978 D_real: 0.037 D_fake: 0.043 G: 4.579 NCE: 3.601 step: 6600.000 epoch: 33.000 
+OrderedDict([('G_GAN', 0.9782198071479797), ('D_real', 0.03744661808013916), ('D_fake', 0.04312718287110329), ('G', 4.579402923583984), ('NCE', 3.6011829376220703), ('step', 6600), ('epoch', 33)])
+(epoch: 33, iters: 172, time: 0.401, data: 0.001) G_GAN: 0.444 D_real: 0.615 D_fake: 0.068 G: 4.452 NCE: 4.008 step: 6700.000 epoch: 33.000 
+OrderedDict([('G_GAN', 0.443790465593338), ('D_real', 0.6149629354476929), ('D_fake', 0.06830604374408722), ('G', 4.452277183532715), ('NCE', 4.008486747741699), ('step', 6700), ('epoch', 33)])
+End of epoch 33 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 34, iters: 68, time: 0.402, data: 0.001) G_GAN: 0.452 D_real: 0.185 D_fake: 0.112 G: 4.725 NCE: 4.273 step: 6800.000 epoch: 34.000 
+OrderedDict([('G_GAN', 0.4520825445652008), ('D_real', 0.18538692593574524), ('D_fake', 0.1123821958899498), ('G', 4.725019931793213), ('NCE', 4.272937297821045), ('step', 6800), ('epoch', 34)])
+(epoch: 34, iters: 168, time: 0.401, data: 0.001) G_GAN: 0.580 D_real: 0.429 D_fake: 0.191 G: 7.530 NCE: 6.950 step: 6900.000 epoch: 34.000 
+OrderedDict([('G_GAN', 0.5801132321357727), ('D_real', 0.42924800515174866), ('D_fake', 0.1911754608154297), ('G', 7.529671669006348), ('NCE', 6.949558258056641), ('step', 6900), ('epoch', 34)])
+End of epoch 34 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 35, iters: 64, time: 0.401, data: 0.001) G_GAN: 0.511 D_real: 0.374 D_fake: 0.104 G: 4.586 NCE: 4.076 step: 7000.000 epoch: 35.000 
+OrderedDict([('G_GAN', 0.5106460452079773), ('D_real', 0.3737238943576813), ('D_fake', 0.10446923226118088), ('G', 4.586227893829346), ('NCE', 4.075582027435303), ('step', 7000), ('epoch', 35)])
+(epoch: 35, iters: 164, time: 0.401, data: 0.002) G_GAN: 0.258 D_real: 0.492 D_fake: 0.123 G: 3.825 NCE: 3.568 step: 7100.000 epoch: 35.000 
+OrderedDict([('G_GAN', 0.25751402974128723), ('D_real', 0.4917318820953369), ('D_fake', 0.12319757789373398), ('G', 3.825068473815918), ('NCE', 3.567554473876953), ('step', 7100), ('epoch', 35)])
+End of epoch 35 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 36, iters: 60, time: 0.401, data: 0.001) G_GAN: 0.495 D_real: 0.391 D_fake: 0.137 G: 12.365 NCE: 11.870 step: 7200.000 epoch: 36.000 
+OrderedDict([('G_GAN', 0.4951818883419037), ('D_real', 0.39052748680114746), ('D_fake', 0.13699202239513397), ('G', 12.364910125732422), ('NCE', 11.869728088378906), ('step', 7200), ('epoch', 36)])
+(epoch: 36, iters: 160, time: 0.401, data: 0.001) G_GAN: 0.279 D_real: 0.322 D_fake: 0.169 G: 5.303 NCE: 5.023 step: 7300.000 epoch: 36.000 
+OrderedDict([('G_GAN', 0.27944469451904297), ('D_real', 0.32215240597724915), ('D_fake', 0.16858942806720734), ('G', 5.302540302276611), ('NCE', 5.023095607757568), ('step', 7300), ('epoch', 36)])
+End of epoch 36 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 37, iters: 56, time: 0.401, data: 0.001) G_GAN: 0.363 D_real: 0.319 D_fake: 0.193 G: 12.465 NCE: 12.101 step: 7400.000 epoch: 37.000 
+OrderedDict([('G_GAN', 0.3631494343280792), ('D_real', 0.3189758360385895), ('D_fake', 0.19322337210178375), ('G', 12.46458625793457), ('NCE', 12.101436614990234), ('step', 7400), ('epoch', 37)])
+(epoch: 37, iters: 156, time: 0.401, data: 0.001) G_GAN: 0.262 D_real: 0.320 D_fake: 0.081 G: 4.009 NCE: 3.746 step: 7500.000 epoch: 37.000 
+OrderedDict([('G_GAN', 0.2624022662639618), ('D_real', 0.3198481798171997), ('D_fake', 0.08092253655195236), ('G', 4.008646011352539), ('NCE', 3.746243715286255), ('step', 7500), ('epoch', 37)])
+End of epoch 37 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 38, iters: 52, time: 0.401, data: 0.001) G_GAN: 0.452 D_real: 0.231 D_fake: 0.240 G: 3.694 NCE: 3.242 step: 7600.000 epoch: 38.000 
+OrderedDict([('G_GAN', 0.4518963098526001), ('D_real', 0.23094481229782104), ('D_fake', 0.23998142778873444), ('G', 3.694211959838867), ('NCE', 3.2423157691955566), ('step', 7600), ('epoch', 38)])
+(epoch: 38, iters: 152, time: 0.401, data: 0.001) G_GAN: 0.690 D_real: 0.192 D_fake: 0.059 G: 4.350 NCE: 3.661 step: 7700.000 epoch: 38.000 
+OrderedDict([('G_GAN', 0.6897827982902527), ('D_real', 0.19171489775180817), ('D_fake', 0.05934545025229454), ('G', 4.3504204750061035), ('NCE', 3.660637617111206), ('step', 7700), ('epoch', 38)])
+End of epoch 38 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 39, iters: 48, time: 0.401, data: 0.001) G_GAN: 0.406 D_real: 0.277 D_fake: 0.311 G: 12.824 NCE: 12.418 step: 7800.000 epoch: 39.000 
+OrderedDict([('G_GAN', 0.4058997333049774), ('D_real', 0.27662625908851624), ('D_fake', 0.3114185929298401), ('G', 12.824132919311523), ('NCE', 12.418232917785645), ('step', 7800), ('epoch', 39)])
+(epoch: 39, iters: 148, time: 0.401, data: 0.001) G_GAN: 0.549 D_real: 0.085 D_fake: 0.123 G: 12.552 NCE: 12.004 step: 7900.000 epoch: 39.000 
+OrderedDict([('G_GAN', 0.548638105392456), ('D_real', 0.08500543981790543), ('D_fake', 0.12339407205581665), ('G', 12.552204132080078), ('NCE', 12.003565788269043), ('step', 7900), ('epoch', 39)])
+End of epoch 39 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 40, iters: 44, time: 0.402, data: 0.001) G_GAN: 0.296 D_real: 0.078 D_fake: 0.324 G: 12.658 NCE: 12.362 step: 8000.000 epoch: 40.000 
+OrderedDict([('G_GAN', 0.2961064577102661), ('D_real', 0.07792791724205017), ('D_fake', 0.3238395154476166), ('G', 12.658354759216309), ('NCE', 12.362248420715332), ('step', 8000), ('epoch', 40)])
+(epoch: 40, iters: 144, time: 0.401, data: 0.001) G_GAN: 0.641 D_real: 0.018 D_fake: 0.357 G: 4.561 NCE: 3.920 step: 8100.000 epoch: 40.000 
+OrderedDict([('G_GAN', 0.6410888433456421), ('D_real', 0.018123580142855644), ('D_fake', 0.35680779814720154), ('G', 4.560993671417236), ('NCE', 3.9199047088623047), ('step', 8100), ('epoch', 40)])
+End of epoch 40 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 41, iters: 40, time: 0.402, data: 0.001) G_GAN: 0.388 D_real: 0.184 D_fake: 0.188 G: 5.170 NCE: 4.781 step: 8200.000 epoch: 41.000 
+OrderedDict([('G_GAN', 0.3884923756122589), ('D_real', 0.18433082103729248), ('D_fake', 0.18830041587352753), ('G', 5.169577121734619), ('NCE', 4.7810845375061035), ('step', 8200), ('epoch', 41)])
+(epoch: 41, iters: 140, time: 0.401, data: 0.001) G_GAN: 0.463 D_real: 0.033 D_fake: 0.323 G: 12.682 NCE: 12.220 step: 8300.000 epoch: 41.000 
+OrderedDict([('G_GAN', 0.46252819895744324), ('D_real', 0.032517291605472565), ('D_fake', 0.3234366178512573), ('G', 12.682069778442383), ('NCE', 12.219541549682617), ('step', 8300), ('epoch', 41)])
+End of epoch 41 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 42, iters: 36, time: 0.402, data: 0.001) G_GAN: 0.589 D_real: 0.185 D_fake: 0.056 G: 4.101 NCE: 3.512 step: 8400.000 epoch: 42.000 
+OrderedDict([('G_GAN', 0.5889987945556641), ('D_real', 0.18454046547412872), ('D_fake', 0.05600081384181976), ('G', 4.100592613220215), ('NCE', 3.5115935802459717), ('step', 8400), ('epoch', 42)])
+(epoch: 42, iters: 136, time: 0.401, data: 0.001) G_GAN: 0.454 D_real: 0.057 D_fake: 0.320 G: 12.274 NCE: 11.819 step: 8500.000 epoch: 42.000 
+OrderedDict([('G_GAN', 0.45438599586486816), ('D_real', 0.05710357427597046), ('D_fake', 0.32021427154541016), ('G', 12.273707389831543), ('NCE', 11.819321632385254), ('step', 8500), ('epoch', 42)])
+End of epoch 42 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 43, iters: 32, time: 0.401, data: 0.000) G_GAN: 0.471 D_real: 0.372 D_fake: 0.166 G: 3.496 NCE: 3.025 step: 8600.000 epoch: 43.000 
+OrderedDict([('G_GAN', 0.4711636006832123), ('D_real', 0.37179455161094666), ('D_fake', 0.16567054390907288), ('G', 3.496105909347534), ('NCE', 3.024942398071289), ('step', 8600), ('epoch', 43)])
+(epoch: 43, iters: 132, time: 0.401, data: 0.001) G_GAN: 0.286 D_real: 0.173 D_fake: 0.198 G: 3.713 NCE: 3.428 step: 8700.000 epoch: 43.000 
+OrderedDict([('G_GAN', 0.285560667514801), ('D_real', 0.17312946915626526), ('D_fake', 0.19816511869430542), ('G', 3.7131447792053223), ('NCE', 3.427584171295166), ('step', 8700), ('epoch', 43)])
+End of epoch 43 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 44, iters: 28, time: 0.402, data: 0.001) G_GAN: 0.629 D_real: 0.017 D_fake: 0.116 G: 12.855 NCE: 12.226 step: 8800.000 epoch: 44.000 
+OrderedDict([('G_GAN', 0.6292221546173096), ('D_real', 0.017328888177871704), ('D_fake', 0.11637837439775467), ('G', 12.854917526245117), ('NCE', 12.225695610046387), ('step', 8800), ('epoch', 44)])
+(epoch: 44, iters: 128, time: 0.401, data: 0.001) G_GAN: 0.317 D_real: 0.203 D_fake: 0.144 G: 13.335 NCE: 13.019 step: 8900.000 epoch: 44.000 
+OrderedDict([('G_GAN', 0.3169741928577423), ('D_real', 0.20255519449710846), ('D_fake', 0.14420142769813538), ('G', 13.335495948791504), ('NCE', 13.018521308898926), ('step', 8900), ('epoch', 44)])
+End of epoch 44 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 45, iters: 24, time: 0.402, data: 0.001) G_GAN: 0.207 D_real: 0.808 D_fake: 0.196 G: 3.537 NCE: 3.329 step: 9000.000 epoch: 45.000 
+OrderedDict([('G_GAN', 0.20728860795497894), ('D_real', 0.8079249858856201), ('D_fake', 0.19553731381893158), ('G', 3.53659987449646), ('NCE', 3.3293113708496094), ('step', 9000), ('epoch', 45)])
+(epoch: 45, iters: 124, time: 0.401, data: 0.000) G_GAN: 0.799 D_real: 0.026 D_fake: 0.133 G: 13.026 NCE: 12.227 step: 9100.000 epoch: 45.000 
+OrderedDict([('G_GAN', 0.7990748882293701), ('D_real', 0.025605078786611557), ('D_fake', 0.13314543664455414), ('G', 13.026299476623535), ('NCE', 12.227224349975586), ('step', 9100), ('epoch', 45)])
+End of epoch 45 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 46, iters: 20, time: 0.402, data: 0.001) G_GAN: 0.746 D_real: 0.779 D_fake: 0.238 G: 12.592 NCE: 11.846 step: 9200.000 epoch: 46.000 
+OrderedDict([('G_GAN', 0.7462778687477112), ('D_real', 0.7794586420059204), ('D_fake', 0.23817066848278046), ('G', 12.592424392700195), ('NCE', 11.846146583557129), ('step', 9200), ('epoch', 46)])
+(epoch: 46, iters: 120, time: 0.402, data: 0.001) G_GAN: 0.528 D_real: 0.019 D_fake: 0.160 G: 3.853 NCE: 3.324 step: 9300.000 epoch: 46.000 
+OrderedDict([('G_GAN', 0.5283387303352356), ('D_real', 0.019355857744812965), ('D_fake', 0.1599050611257553), ('G', 3.8528168201446533), ('NCE', 3.3244781494140625), ('step', 9300), ('epoch', 46)])
+End of epoch 46 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 47, iters: 16, time: 0.402, data: 0.001) G_GAN: 0.491 D_real: 0.022 D_fake: 0.100 G: 4.918 NCE: 4.427 step: 9400.000 epoch: 47.000 
+OrderedDict([('G_GAN', 0.4908532500267029), ('D_real', 0.02211942709982395), ('D_fake', 0.09962088614702225), ('G', 4.917590618133545), ('NCE', 4.426737308502197), ('step', 9400), ('epoch', 47)])
+(epoch: 47, iters: 116, time: 0.402, data: 0.001) G_GAN: 0.431 D_real: 0.306 D_fake: 0.058 G: 4.497 NCE: 4.066 step: 9500.000 epoch: 47.000 
+OrderedDict([('G_GAN', 0.43078193068504333), ('D_real', 0.3057568073272705), ('D_fake', 0.05770641565322876), ('G', 4.497147560119629), ('NCE', 4.066365718841553), ('step', 9500), ('epoch', 47)])
+End of epoch 47 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 48, iters: 12, time: 0.403, data: 0.001) G_GAN: 0.581 D_real: 0.065 D_fake: 0.112 G: 3.901 NCE: 3.319 step: 9600.000 epoch: 48.000 
+OrderedDict([('G_GAN', 0.5810600519180298), ('D_real', 0.06484812498092651), ('D_fake', 0.11157499998807907), ('G', 3.9005484580993652), ('NCE', 3.319488525390625), ('step', 9600), ('epoch', 48)])
+(epoch: 48, iters: 112, time: 0.401, data: 0.001) G_GAN: 0.473 D_real: 0.037 D_fake: 0.200 G: 12.356 NCE: 11.883 step: 9700.000 epoch: 48.000 
+OrderedDict([('G_GAN', 0.4733700752258301), ('D_real', 0.03670559078454971), ('D_fake', 0.20029030740261078), ('G', 12.356178283691406), ('NCE', 11.882807731628418), ('step', 9700), ('epoch', 48)])
+End of epoch 48 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 49, iters: 8, time: 0.403, data: 0.001) G_GAN: 0.450 D_real: 0.599 D_fake: 0.071 G: 12.039 NCE: 11.589 step: 9800.000 epoch: 49.000 
+OrderedDict([('G_GAN', 0.4497573971748352), ('D_real', 0.5994876027107239), ('D_fake', 0.07057534903287888), ('G', 12.03856372833252), ('NCE', 11.58880615234375), ('step', 9800), ('epoch', 49)])
+(epoch: 49, iters: 108, time: 0.402, data: 0.001) G_GAN: 0.364 D_real: 0.398 D_fake: 0.194 G: 3.227 NCE: 2.862 step: 9900.000 epoch: 49.000 
+OrderedDict([('G_GAN', 0.36445268988609314), ('D_real', 0.3982602059841156), ('D_fake', 0.19449228048324585), ('G', 3.2268176078796387), ('NCE', 2.8623650074005127), ('step', 9900), ('epoch', 49)])
+End of epoch 49 / 80     Time Taken: 93 sec
+learning rate = 0.0002000
+(epoch: 50, iters: 4, time: 0.403, data: 0.001) G_GAN: 0.552 D_real: 0.157 D_fake: 0.089 G: 3.825 NCE: 3.273 step: 10000.000 epoch: 50.000 
+OrderedDict([('G_GAN', 0.5523927211761475), ('D_real', 0.1572328507900238), ('D_fake', 0.0889115259051323), ('G', 3.8254079818725586), ('NCE', 3.273015260696411), ('step', 10000), ('epoch', 50)])
+saving the latest model (epoch 50, total_iters 10000)
+DL_for_CV
+dataset [UnalignedDataset] was created
+model [CUTModel] was created
+creating web directory \work_dir_cut\val_results\DL_for_CV\test_latest
+====================================== ['\\work_dir_cut\\val_results\\DL_for_CV\\test_latest\\images', '\\work_dir_cut\\val_results\\DL_for_CV\\test_latest\\WHU']
+(epoch: 50, iters: 104, time: 0.402, data: 0.003) G_GAN: 0.284 D_real: 0.130 D_fake: 0.299 G: 3.370 NCE: 3.086 step: 10100.000 epoch: 50.000 
+OrderedDict([('G_GAN', 0.2836291193962097), ('D_real', 0.1304914802312851), ('D_fake', 0.2988056540489197), ('G', 3.369959592819214), ('NCE', 3.0863304138183594), ('step', 10100), ('epoch', 50)])
+(epoch: 50, iters: 204, time: 0.401, data: 0.001) G_GAN: 0.413 D_real: 0.134 D_fake: 0.271 G: 12.120 NCE: 11.707 step: 10200.000 epoch: 50.000 
+OrderedDict([('G_GAN', 0.41277456283569336), ('D_real', 0.13372914493083954), ('D_fake', 0.2712680995464325), ('G', 12.11973762512207), ('NCE', 11.706962585449219), ('step', 10200), ('epoch', 50)])
+End of epoch 50 / 80     Time Taken: 226 sec
+learning rate = 0.0001935
+(epoch: 51, iters: 100, time: 0.401, data: 11.333) G_GAN: 0.567 D_real: 0.188 D_fake: 0.039 G: 12.997 NCE: 12.430 step: 10300.000 epoch: 51.000 
+OrderedDict([('G_GAN', 0.56716388463974), ('D_real', 0.18806011974811554), ('D_fake', 0.03888702020049095), ('G', 12.997464179992676), ('NCE', 12.43030071258545), ('step', 10300), ('epoch', 51)])
+(epoch: 51, iters: 200, time: 0.401, data: 0.001) G_GAN: 0.527 D_real: 0.212 D_fake: 0.069 G: 3.795 NCE: 3.269 step: 10400.000 epoch: 51.000 
+OrderedDict([('G_GAN', 0.5268888473510742), ('D_real', 0.2117089182138443), ('D_fake', 0.06864527612924576), ('G', 3.7954015731811523), ('NCE', 3.268512725830078), ('step', 10400), ('epoch', 51)])
+End of epoch 51 / 80     Time Taken: 93 sec
+learning rate = 0.0001871
+(epoch: 52, iters: 96, time: 0.402, data: 0.001) G_GAN: 0.508 D_real: 0.319 D_fake: 0.079 G: 11.941 NCE: 11.433 step: 10500.000 epoch: 52.000 
+OrderedDict([('G_GAN', 0.5079771876335144), ('D_real', 0.3193286955356598), ('D_fake', 0.07873057574033737), ('G', 11.941176414489746), ('NCE', 11.433198928833008), ('step', 10500), ('epoch', 52)])
+(epoch: 52, iters: 196, time: 0.401, data: 0.001) G_GAN: 0.402 D_real: 0.167 D_fake: 0.230 G: 12.118 NCE: 11.717 step: 10600.000 epoch: 52.000 
+OrderedDict([('G_GAN', 0.4017641246318817), ('D_real', 0.1672515720129013), ('D_fake', 0.23005427420139313), ('G', 12.11849308013916), ('NCE', 11.716729164123535), ('step', 10600), ('epoch', 52)])
+End of epoch 52 / 80     Time Taken: 93 sec
+learning rate = 0.0001806
+(epoch: 53, iters: 92, time: 0.402, data: 0.001) G_GAN: 0.416 D_real: 0.179 D_fake: 0.110 G: 3.357 NCE: 2.942 step: 10700.000 epoch: 53.000 
+OrderedDict([('G_GAN', 0.41575857996940613), ('D_real', 0.17880374193191528), ('D_fake', 0.11037024110555649), ('G', 3.357496976852417), ('NCE', 2.9417383670806885), ('step', 10700), ('epoch', 53)])
+(epoch: 53, iters: 192, time: 0.402, data: 0.001) G_GAN: 0.543 D_real: 0.219 D_fake: 0.098 G: 12.163 NCE: 11.620 step: 10800.000 epoch: 53.000 
+OrderedDict([('G_GAN', 0.5427724123001099), ('D_real', 0.21890434622764587), ('D_fake', 0.09831459075212479), ('G', 12.162742614746094), ('NCE', 11.619970321655273), ('step', 10800), ('epoch', 53)])
+End of epoch 53 / 80     Time Taken: 94 sec
+learning rate = 0.0001742
+(epoch: 54, iters: 88, time: 0.402, data: 0.001) G_GAN: 0.742 D_real: 0.072 D_fake: 0.122 G: 12.512 NCE: 11.771 step: 10900.000 epoch: 54.000 
+OrderedDict([('G_GAN', 0.7416832447052002), ('D_real', 0.07212933152914047), ('D_fake', 0.12201908230781555), ('G', 12.512303352355957), ('NCE', 11.770620346069336), ('step', 10900), ('epoch', 54)])
+(epoch: 54, iters: 188, time: 0.401, data: 0.001) G_GAN: 0.444 D_real: 0.056 D_fake: 0.184 G: 12.948 NCE: 12.504 step: 11000.000 epoch: 54.000 
+OrderedDict([('G_GAN', 0.4440578818321228), ('D_real', 0.05583014339208603), ('D_fake', 0.18434090912342072), ('G', 12.947918891906738), ('NCE', 12.503861427307129), ('step', 11000), ('epoch', 54)])
+End of epoch 54 / 80     Time Taken: 93 sec
+learning rate = 0.0001677
+(epoch: 55, iters: 84, time: 0.402, data: 0.000) G_GAN: 0.380 D_real: 0.534 D_fake: 0.119 G: 12.136 NCE: 11.756 step: 11100.000 epoch: 55.000 
+OrderedDict([('G_GAN', 0.38038402795791626), ('D_real', 0.5342973470687866), ('D_fake', 0.11924594640731812), ('G', 12.136346817016602), ('NCE', 11.755962371826172), ('step', 11100), ('epoch', 55)])
+(epoch: 55, iters: 184, time: 0.401, data: 0.001) G_GAN: 0.342 D_real: 0.299 D_fake: 0.200 G: 3.309 NCE: 2.967 step: 11200.000 epoch: 55.000 
+OrderedDict([('G_GAN', 0.3419833779335022), ('D_real', 0.2985067069530487), ('D_fake', 0.20023755729198456), ('G', 3.30914044380188), ('NCE', 2.9671571254730225), ('step', 11200), ('epoch', 55)])
+End of epoch 55 / 80     Time Taken: 93 sec
+learning rate = 0.0001613
+(epoch: 56, iters: 80, time: 0.401, data: 0.001) G_GAN: 0.329 D_real: 0.477 D_fake: 0.156 G: 11.676 NCE: 11.347 step: 11300.000 epoch: 56.000 
+OrderedDict([('G_GAN', 0.3288164734840393), ('D_real', 0.4766092598438263), ('D_fake', 0.1561044305562973), ('G', 11.676036834716797), ('NCE', 11.347220420837402), ('step', 11300), ('epoch', 56)])
+(epoch: 56, iters: 180, time: 0.401, data: 0.001) G_GAN: 0.429 D_real: 0.216 D_fake: 0.144 G: 3.228 NCE: 2.798 step: 11400.000 epoch: 56.000 
+OrderedDict([('G_GAN', 0.4292195439338684), ('D_real', 0.21563509106636047), ('D_fake', 0.14409518241882324), ('G', 3.2276949882507324), ('NCE', 2.798475503921509), ('step', 11400), ('epoch', 56)])
+End of epoch 56 / 80     Time Taken: 93 sec
+learning rate = 0.0001548
+(epoch: 57, iters: 76, time: 0.402, data: 0.000) G_GAN: 0.465 D_real: 0.049 D_fake: 0.537 G: 3.454 NCE: 2.989 step: 11500.000 epoch: 57.000 
+OrderedDict([('G_GAN', 0.46534138917922974), ('D_real', 0.04947654530405998), ('D_fake', 0.5374374985694885), ('G', 3.4540512561798096), ('NCE', 2.9887099266052246), ('step', 11500), ('epoch', 57)])
+(epoch: 57, iters: 176, time: 0.402, data: 0.001) G_GAN: 0.663 D_real: 0.048 D_fake: 0.059 G: 12.607 NCE: 11.944 step: 11600.000 epoch: 57.000 
+OrderedDict([('G_GAN', 0.6631911396980286), ('D_real', 0.0484241284430027), ('D_fake', 0.05928207188844681), ('G', 12.606724739074707), ('NCE', 11.943533897399902), ('step', 11600), ('epoch', 57)])
+End of epoch 57 / 80     Time Taken: 93 sec
+learning rate = 0.0001484
+(epoch: 58, iters: 72, time: 0.402, data: 0.001) G_GAN: 0.334 D_real: 0.064 D_fake: 0.220 G: 3.148 NCE: 2.813 step: 11700.000 epoch: 58.000 
+OrderedDict([('G_GAN', 0.33416035771369934), ('D_real', 0.0639931857585907), ('D_fake', 0.22031280398368835), ('G', 3.147627830505371), ('NCE', 2.813467502593994), ('step', 11700), ('epoch', 58)])
+(epoch: 58, iters: 172, time: 0.402, data: 0.001) G_GAN: 0.456 D_real: 0.132 D_fake: 0.136 G: 12.173 NCE: 11.717 step: 11800.000 epoch: 58.000 
+OrderedDict([('G_GAN', 0.4558453857898712), ('D_real', 0.13192005455493927), ('D_fake', 0.13566814363002777), ('G', 12.172733306884766), ('NCE', 11.716887474060059), ('step', 11800), ('epoch', 58)])
+End of epoch 58 / 80     Time Taken: 93 sec
+learning rate = 0.0001419
+(epoch: 59, iters: 68, time: 0.402, data: 0.001) G_GAN: 0.565 D_real: 0.125 D_fake: 0.079 G: 3.562 NCE: 2.997 step: 11900.000 epoch: 59.000 
+OrderedDict([('G_GAN', 0.5645147562026978), ('D_real', 0.12534794211387634), ('D_fake', 0.07946398854255676), ('G', 3.561779499053955), ('NCE', 2.9972646236419678), ('step', 11900), ('epoch', 59)])
+(epoch: 59, iters: 168, time: 0.401, data: 0.001) G_GAN: 0.825 D_real: 0.113 D_fake: 0.042 G: 5.441 NCE: 4.616 step: 12000.000 epoch: 59.000 
+OrderedDict([('G_GAN', 0.8250132203102112), ('D_real', 0.11274030059576035), ('D_fake', 0.041878607124090195), ('G', 5.440802097320557), ('NCE', 4.61578893661499), ('step', 12000), ('epoch', 59)])
+End of epoch 59 / 80     Time Taken: 93 sec
+learning rate = 0.0001355
+(epoch: 60, iters: 64, time: 0.402, data: 0.001) G_GAN: 0.315 D_real: 0.210 D_fake: 0.264 G: 12.358 NCE: 12.043 step: 12100.000 epoch: 60.000 
+OrderedDict([('G_GAN', 0.31481456756591797), ('D_real', 0.2099408507347107), ('D_fake', 0.26358139514923096), ('G', 12.358291625976562), ('NCE', 12.043477058410645), ('step', 12100), ('epoch', 60)])
+(epoch: 60, iters: 164, time: 0.401, data: 0.001) G_GAN: 0.383 D_real: 0.293 D_fake: 0.192 G: 3.202 NCE: 2.818 step: 12200.000 epoch: 60.000 
+OrderedDict([('G_GAN', 0.38349980115890503), ('D_real', 0.29337868094444275), ('D_fake', 0.1916346400976181), ('G', 3.2018308639526367), ('NCE', 2.818331003189087), ('step', 12200), ('epoch', 60)])
+End of epoch 60 / 80     Time Taken: 93 sec
+learning rate = 0.0001290
+(epoch: 61, iters: 60, time: 0.402, data: 0.001) G_GAN: 0.367 D_real: 0.284 D_fake: 0.177 G: 11.505 NCE: 11.138 step: 12300.000 epoch: 61.000 
+OrderedDict([('G_GAN', 0.36706793308258057), ('D_real', 0.28396737575531006), ('D_fake', 0.17676350474357605), ('G', 11.505427360534668), ('NCE', 11.138359069824219), ('step', 12300), ('epoch', 61)])
+(epoch: 61, iters: 160, time: 0.402, data: 0.001) G_GAN: 0.476 D_real: 0.161 D_fake: 0.069 G: 12.263 NCE: 11.786 step: 12400.000 epoch: 61.000 
+OrderedDict([('G_GAN', 0.4763779044151306), ('D_real', 0.16096441447734833), ('D_fake', 0.06885113567113876), ('G', 12.262596130371094), ('NCE', 11.786218643188477), ('step', 12400), ('epoch', 61)])
+End of epoch 61 / 80     Time Taken: 93 sec
+learning rate = 0.0001226
+(epoch: 62, iters: 56, time: 0.402, data: 0.001) G_GAN: 0.523 D_real: 0.046 D_fake: 0.130 G: 3.429 NCE: 2.906 step: 12500.000 epoch: 62.000 
+OrderedDict([('G_GAN', 0.5229925513267517), ('D_real', 0.046276919543743134), ('D_fake', 0.1297040432691574), ('G', 3.4285714626312256), ('NCE', 2.905578851699829), ('step', 12500), ('epoch', 62)])
+(epoch: 62, iters: 156, time: 0.401, data: 0.001) G_GAN: 0.494 D_real: 0.545 D_fake: 0.048 G: 3.126 NCE: 2.631 step: 12600.000 epoch: 62.000 
+OrderedDict([('G_GAN', 0.494473934173584), ('D_real', 0.5448089241981506), ('D_fake', 0.04753665626049042), ('G', 3.1257824897766113), ('NCE', 2.6313085556030273), ('step', 12600), ('epoch', 62)])
+End of epoch 62 / 80     Time Taken: 93 sec
+learning rate = 0.0001161
+(epoch: 63, iters: 52, time: 0.402, data: 0.001) G_GAN: 0.751 D_real: 0.050 D_fake: 0.111 G: 3.628 NCE: 2.877 step: 12700.000 epoch: 63.000 
+OrderedDict([('G_GAN', 0.7507054209709167), ('D_real', 0.0503564216196537), ('D_fake', 0.111252561211586), ('G', 3.6278624534606934), ('NCE', 2.877156972885132), ('step', 12700), ('epoch', 63)])
+(epoch: 63, iters: 152, time: 0.401, data: 0.001) G_GAN: 0.595 D_real: 0.030 D_fake: 0.120 G: 4.041 NCE: 3.446 step: 12800.000 epoch: 63.000 
+OrderedDict([('G_GAN', 0.5951194763183594), ('D_real', 0.029644863680005074), ('D_fake', 0.11966419219970703), ('G', 4.040910720825195), ('NCE', 3.445791244506836), ('step', 12800), ('epoch', 63)])
+End of epoch 63 / 80     Time Taken: 93 sec
+learning rate = 0.0001097
+(epoch: 64, iters: 48, time: 0.402, data: 0.000) G_GAN: 0.418 D_real: 0.536 D_fake: 0.114 G: 12.518 NCE: 12.101 step: 12900.000 epoch: 64.000 
+OrderedDict([('G_GAN', 0.4178273677825928), ('D_real', 0.5362218618392944), ('D_fake', 0.11359561234712601), ('G', 12.518471717834473), ('NCE', 12.1006441116333), ('step', 12900), ('epoch', 64)])
+(epoch: 64, iters: 148, time: 0.401, data: 0.001) G_GAN: 0.690 D_real: 0.021 D_fake: 0.128 G: 12.088 NCE: 11.398 step: 13000.000 epoch: 64.000 
+OrderedDict([('G_GAN', 0.689924418926239), ('D_real', 0.02136877179145813), ('D_fake', 0.12780778110027313), ('G', 12.088081359863281), ('NCE', 11.398157119750977), ('step', 13000), ('epoch', 64)])
+End of epoch 64 / 80     Time Taken: 93 sec
+learning rate = 0.0001032
+(epoch: 65, iters: 44, time: 0.402, data: 0.001) G_GAN: 0.484 D_real: 0.250 D_fake: 0.150 G: 3.194 NCE: 2.710 step: 13100.000 epoch: 65.000 
+OrderedDict([('G_GAN', 0.4836200475692749), ('D_real', 0.250370055437088), ('D_fake', 0.14965367317199707), ('G', 3.194063663482666), ('NCE', 2.7104434967041016), ('step', 13100), ('epoch', 65)])
+(epoch: 65, iters: 144, time: 0.402, data: 0.001) G_GAN: 0.508 D_real: 0.117 D_fake: 0.117 G: 11.933 NCE: 11.426 step: 13200.000 epoch: 65.000 
+OrderedDict([('G_GAN', 0.5075801610946655), ('D_real', 0.11721987277269363), ('D_fake', 0.11702294647693634), ('G', 11.933098793029785), ('NCE', 11.425518989562988), ('step', 13200), ('epoch', 65)])
+End of epoch 65 / 80     Time Taken: 94 sec
+learning rate = 0.0000968
+(epoch: 66, iters: 40, time: 0.402, data: 0.001) G_GAN: 0.463 D_real: 0.307 D_fake: 0.059 G: 3.574 NCE: 3.112 step: 13300.000 epoch: 66.000 
+OrderedDict([('G_GAN', 0.46258342266082764), ('D_real', 0.3073384463787079), ('D_fake', 0.059322066605091095), ('G', 3.5742344856262207), ('NCE', 3.1116511821746826), ('step', 13300), ('epoch', 66)])
+(epoch: 66, iters: 140, time: 0.402, data: 0.001) G_GAN: 0.462 D_real: 0.036 D_fake: 0.173 G: 12.387 NCE: 11.925 step: 13400.000 epoch: 66.000 
+OrderedDict([('G_GAN', 0.46190497279167175), ('D_real', 0.035600900650024414), ('D_fake', 0.17269736528396606), ('G', 12.386932373046875), ('NCE', 11.925027847290039), ('step', 13400), ('epoch', 66)])
+End of epoch 66 / 80     Time Taken: 93 sec
+learning rate = 0.0000903
+(epoch: 67, iters: 36, time: 0.402, data: 0.001) G_GAN: 0.387 D_real: 0.060 D_fake: 0.196 G: 3.528 NCE: 3.142 step: 13500.000 epoch: 67.000 
+OrderedDict([('G_GAN', 0.38659611344337463), ('D_real', 0.05993574112653732), ('D_fake', 0.19577118754386902), ('G', 3.5284998416900635), ('NCE', 3.1419036388397217), ('step', 13500), ('epoch', 67)])
+(epoch: 67, iters: 136, time: 0.402, data: 0.001) G_GAN: 0.393 D_real: 0.266 D_fake: 0.233 G: 11.974 NCE: 11.581 step: 13600.000 epoch: 67.000 
+OrderedDict([('G_GAN', 0.3929870128631592), ('D_real', 0.26588261127471924), ('D_fake', 0.2327602356672287), ('G', 11.973883628845215), ('NCE', 11.580896377563477), ('step', 13600), ('epoch', 67)])
+End of epoch 67 / 80     Time Taken: 94 sec
+learning rate = 0.0000839
+(epoch: 68, iters: 32, time: 0.402, data: 0.001) G_GAN: 0.486 D_real: 0.501 D_fake: 0.063 G: 3.341 NCE: 2.855 step: 13700.000 epoch: 68.000 
+OrderedDict([('G_GAN', 0.4857521653175354), ('D_real', 0.5012649297714233), ('D_fake', 0.06274373829364777), ('G', 3.341033458709717), ('NCE', 2.855281352996826), ('step', 13700), ('epoch', 68)])
+(epoch: 68, iters: 132, time: 0.402, data: 0.001) G_GAN: 0.748 D_real: 0.037 D_fake: 0.210 G: 11.980 NCE: 11.232 step: 13800.000 epoch: 68.000 
+OrderedDict([('G_GAN', 0.7479315996170044), ('D_real', 0.03728562220931053), ('D_fake', 0.21015813946723938), ('G', 11.979842185974121), ('NCE', 11.231910705566406), ('step', 13800), ('epoch', 68)])
+End of epoch 68 / 80     Time Taken: 93 sec
+learning rate = 0.0000774
+(epoch: 69, iters: 28, time: 0.402, data: 0.001) G_GAN: 0.426 D_real: 0.345 D_fake: 0.148 G: 4.207 NCE: 3.781 step: 13900.000 epoch: 69.000 
+OrderedDict([('G_GAN', 0.4262767732143402), ('D_real', 0.3450376093387604), ('D_fake', 0.14773131906986237), ('G', 4.207455158233643), ('NCE', 3.7811782360076904), ('step', 13900), ('epoch', 69)])
+(epoch: 69, iters: 128, time: 0.401, data: 0.000) G_GAN: 0.449 D_real: 0.075 D_fake: 0.214 G: 11.914 NCE: 11.465 step: 14000.000 epoch: 69.000 
+OrderedDict([('G_GAN', 0.44910359382629395), ('D_real', 0.07498188316822052), ('D_fake', 0.2141777127981186), ('G', 11.913790702819824), ('NCE', 11.46468734741211), ('step', 14000), ('epoch', 69)])
+End of epoch 69 / 80     Time Taken: 93 sec
+learning rate = 0.0000710
+(epoch: 70, iters: 24, time: 0.402, data: 0.001) G_GAN: 0.363 D_real: 0.166 D_fake: 0.203 G: 2.948 NCE: 2.584 step: 14100.000 epoch: 70.000 
+OrderedDict([('G_GAN', 0.36333951354026794), ('D_real', 0.16642369329929352), ('D_fake', 0.20287330448627472), ('G', 2.947718858718872), ('NCE', 2.5843794345855713), ('step', 14100), ('epoch', 70)])
+(epoch: 70, iters: 124, time: 0.401, data: 0.001) G_GAN: 0.744 D_real: 0.042 D_fake: 0.032 G: 12.647 NCE: 11.903 step: 14200.000 epoch: 70.000 
+OrderedDict([('G_GAN', 0.7437397837638855), ('D_real', 0.04237990081310272), ('D_fake', 0.031632695347070694), ('G', 12.64655590057373), ('NCE', 11.902815818786621), ('step', 14200), ('epoch', 70)])
+End of epoch 70 / 80     Time Taken: 93 sec
+learning rate = 0.0000645
+(epoch: 71, iters: 20, time: 0.402, data: 0.001) G_GAN: 0.174 D_real: 0.446 D_fake: 0.374 G: 12.077 NCE: 11.903 step: 14300.000 epoch: 71.000 
+OrderedDict([('G_GAN', 0.17360730469226837), ('D_real', 0.44551530480384827), ('D_fake', 0.3736796975135803), ('G', 12.076525688171387), ('NCE', 11.902918815612793), ('step', 14300), ('epoch', 71)])
+(epoch: 71, iters: 120, time: 0.401, data: 0.001) G_GAN: 0.391 D_real: 0.054 D_fake: 0.315 G: 3.961 NCE: 3.570 step: 14400.000 epoch: 71.000 
+OrderedDict([('G_GAN', 0.39075103402137756), ('D_real', 0.054286129772663116), ('D_fake', 0.3149738907814026), ('G', 3.9610769748687744), ('NCE', 3.5703258514404297), ('step', 14400), ('epoch', 71)])
+End of epoch 71 / 80     Time Taken: 93 sec
+learning rate = 0.0000581
+(epoch: 72, iters: 16, time: 0.402, data: 0.001) G_GAN: 0.483 D_real: 0.533 D_fake: 0.090 G: 3.135 NCE: 2.652 step: 14500.000 epoch: 72.000 
+OrderedDict([('G_GAN', 0.4832756519317627), ('D_real', 0.5325290560722351), ('D_fake', 0.08969685435295105), ('G', 3.1352145671844482), ('NCE', 2.6519389152526855), ('step', 14500), ('epoch', 72)])
+(epoch: 72, iters: 116, time: 0.401, data: 0.001) G_GAN: 0.405 D_real: 0.368 D_fake: 0.079 G: 12.212 NCE: 11.807 step: 14600.000 epoch: 72.000 
+OrderedDict([('G_GAN', 0.4046119153499603), ('D_real', 0.3682914972305298), ('D_fake', 0.07862784713506699), ('G', 12.211589813232422), ('NCE', 11.806978225708008), ('step', 14600), ('epoch', 72)])
+End of epoch 72 / 80     Time Taken: 93 sec
+learning rate = 0.0000516
+(epoch: 73, iters: 12, time: 0.402, data: 0.001) G_GAN: 0.633 D_real: 0.380 D_fake: 0.032 G: 12.525 NCE: 11.892 step: 14700.000 epoch: 73.000 
+OrderedDict([('G_GAN', 0.6329348683357239), ('D_real', 0.38038453459739685), ('D_fake', 0.031976185739040375), ('G', 12.525005340576172), ('NCE', 11.892070770263672), ('step', 14700), ('epoch', 73)])
+(epoch: 73, iters: 112, time: 0.401, data: 0.001) G_GAN: 0.769 D_real: 0.018 D_fake: 0.046 G: 12.749 NCE: 11.980 step: 14800.000 epoch: 73.000 
+OrderedDict([('G_GAN', 0.7689586281776428), ('D_real', 0.017710603773593903), ('D_fake', 0.04564611241221428), ('G', 12.748984336853027), ('NCE', 11.980025291442871), ('step', 14800), ('epoch', 73)])
+End of epoch 73 / 80     Time Taken: 93 sec
+learning rate = 0.0000452
+(epoch: 74, iters: 8, time: 0.402, data: 0.001) G_GAN: 0.453 D_real: 0.015 D_fake: 0.193 G: 12.130 NCE: 11.677 step: 14900.000 epoch: 74.000 
+OrderedDict([('G_GAN', 0.45301195979118347), ('D_real', 0.015067951753735542), ('D_fake', 0.19316424429416656), ('G', 12.12972354888916), ('NCE', 11.676712036132812), ('step', 14900), ('epoch', 74)])
+(epoch: 74, iters: 108, time: 0.401, data: 0.001) G_GAN: 0.389 D_real: 0.499 D_fake: 0.142 G: 12.152 NCE: 11.764 step: 15000.000 epoch: 74.000 
+OrderedDict([('G_GAN', 0.3888874650001526), ('D_real', 0.49920111894607544), ('D_fake', 0.14228270947933197), ('G', 12.152405738830566), ('NCE', 11.763518333435059), ('step', 15000), ('epoch', 74)])
+saving the latest model (epoch 74, total_iters 15000)
+DL_for_CV
+dataset [UnalignedDataset] was created
+model [CUTModel] was created
+creating web directory \work_dir_cut\val_results\DL_for_CV\test_latest
+====================================== ['\\work_dir_cut\\val_results\\DL_for_CV\\test_latest\\images', '\\work_dir_cut\\val_results\\DL_for_CV\\test_latest\\WHU']
+End of epoch 74 / 80     Time Taken: 226 sec
+learning rate = 0.0000387
+(epoch: 75, iters: 4, time: 0.402, data: 0.006) G_GAN: 0.641 D_real: 0.521 D_fake: 0.042 G: 3.107 NCE: 2.465 step: 15100.000 epoch: 75.000 
+OrderedDict([('G_GAN', 0.6413931250572205), ('D_real', 0.5214983224868774), ('D_fake', 0.04197359085083008), ('G', 3.1068685054779053), ('NCE', 2.46547532081604), ('step', 15100), ('epoch', 75)])
+(epoch: 75, iters: 104, time: 0.401, data: 0.002) G_GAN: 0.746 D_real: 0.023 D_fake: 0.056 G: 12.675 NCE: 11.928 step: 15200.000 epoch: 75.000 
+OrderedDict([('G_GAN', 0.7462199330329895), ('D_real', 0.022951584309339523), ('D_fake', 0.05619450658559799), ('G', 12.67454719543457), ('NCE', 11.928327560424805), ('step', 15200), ('epoch', 75)])
+(epoch: 75, iters: 204, time: 0.400, data: 0.001) G_GAN: 0.302 D_real: 0.091 D_fake: 0.245 G: 3.176 NCE: 2.874 step: 15300.000 epoch: 75.000 
+OrderedDict([('G_GAN', 0.3023671507835388), ('D_real', 0.09116942435503006), ('D_fake', 0.24467207491397858), ('G', 3.1760447025299072), ('NCE', 2.8736774921417236), ('step', 15300), ('epoch', 75)])
+End of epoch 75 / 80     Time Taken: 93 sec
+learning rate = 0.0000323
+(epoch: 76, iters: 100, time: 0.401, data: 11.430) G_GAN: 0.188 D_real: 0.213 D_fake: 0.380 G: 2.822 NCE: 2.634 step: 15400.000 epoch: 76.000 
+OrderedDict([('G_GAN', 0.18785452842712402), ('D_real', 0.21325652301311493), ('D_fake', 0.3802650570869446), ('G', 2.8216090202331543), ('NCE', 2.6337544918060303), ('step', 15400), ('epoch', 76)])
+(epoch: 76, iters: 200, time: 0.401, data: 0.001) G_GAN: 0.277 D_real: 0.285 D_fake: 0.248 G: 3.556 NCE: 3.279 step: 15500.000 epoch: 76.000 
+OrderedDict([('G_GAN', 0.2770065665245056), ('D_real', 0.2846091687679291), ('D_fake', 0.24797582626342773), ('G', 3.556401252746582), ('NCE', 3.2793946266174316), ('step', 15500), ('epoch', 76)])
+End of epoch 76 / 80     Time Taken: 94 sec
+learning rate = 0.0000258
+(epoch: 77, iters: 96, time: 0.401, data: 0.001) G_GAN: 0.268 D_real: 0.258 D_fake: 0.258 G: 3.091 NCE: 2.822 step: 15600.000 epoch: 77.000 
+OrderedDict([('G_GAN', 0.26823848485946655), ('D_real', 0.2579171359539032), ('D_fake', 0.258267343044281), ('G', 3.0905563831329346), ('NCE', 2.8223178386688232), ('step', 15600), ('epoch', 77)])
+(epoch: 77, iters: 196, time: 0.401, data: 0.001) G_GAN: 0.291 D_real: 0.357 D_fake: 0.218 G: 3.168 NCE: 2.877 step: 15700.000 epoch: 77.000 
+OrderedDict([('G_GAN', 0.29109466075897217), ('D_real', 0.35700029134750366), ('D_fake', 0.21794143319129944), ('G', 3.167860507965088), ('NCE', 2.8767659664154053), ('step', 15700), ('epoch', 77)])
+End of epoch 77 / 80     Time Taken: 93 sec
+learning rate = 0.0000194
+(epoch: 78, iters: 92, time: 0.401, data: 0.001) G_GAN: 0.281 D_real: 0.046 D_fake: 0.249 G: 11.943 NCE: 11.661 step: 15800.000 epoch: 78.000 
+OrderedDict([('G_GAN', 0.2814805507659912), ('D_real', 0.04605276882648468), ('D_fake', 0.24896593391895294), ('G', 11.94272518157959), ('NCE', 11.66124439239502), ('step', 15800), ('epoch', 78)])
+(epoch: 78, iters: 192, time: 0.401, data: 0.001) G_GAN: 0.289 D_real: 0.141 D_fake: 0.224 G: 11.927 NCE: 11.638 step: 15900.000 epoch: 78.000 
+OrderedDict([('G_GAN', 0.2890719175338745), ('D_real', 0.14112143218517303), ('D_fake', 0.223973348736763), ('G', 11.926603317260742), ('NCE', 11.637531280517578), ('step', 15900), ('epoch', 78)])
+End of epoch 78 / 80     Time Taken: 93 sec
+learning rate = 0.0000129
+(epoch: 79, iters: 88, time: 0.401, data: 0.002) G_GAN: 0.493 D_real: 0.226 D_fake: 0.113 G: 11.276 NCE: 10.783 step: 16000.000 epoch: 79.000 
+OrderedDict([('G_GAN', 0.4934135675430298), ('D_real', 0.22625894844532013), ('D_fake', 0.11261100322008133), ('G', 11.27599811553955), ('NCE', 10.782584190368652), ('step', 16000), ('epoch', 79)])
+(epoch: 79, iters: 188, time: 0.401, data: 0.001) G_GAN: 0.234 D_real: 0.103 D_fake: 0.305 G: 3.158 NCE: 2.924 step: 16100.000 epoch: 79.000 
+OrderedDict([('G_GAN', 0.233627051115036), ('D_real', 0.10284678637981415), ('D_fake', 0.3045591711997986), ('G', 3.15771222114563), ('NCE', 2.9240851402282715), ('step', 16100), ('epoch', 79)])
+End of epoch 79 / 80     Time Taken: 93 sec
+learning rate = 0.0000065
+(epoch: 80, iters: 84, time: 0.402, data: 0.001) G_GAN: 0.430 D_real: 0.366 D_fake: 0.133 G: 3.312 NCE: 2.882 step: 16200.000 epoch: 80.000 
+OrderedDict([('G_GAN', 0.4298058748245239), ('D_real', 0.3659670054912567), ('D_fake', 0.13332052528858185), ('G', 3.3116869926452637), ('NCE', 2.8818812370300293), ('step', 16200), ('epoch', 80)])
+(epoch: 80, iters: 184, time: 0.402, data: 0.001) G_GAN: 0.327 D_real: 0.249 D_fake: 0.199 G: 11.997 NCE: 11.670 step: 16300.000 epoch: 80.000 
+OrderedDict([('G_GAN', 0.32725659012794495), ('D_real', 0.24899858236312866), ('D_fake', 0.19913309812545776), ('G', 11.99700927734375), ('NCE', 11.669753074645996), ('step', 16300), ('epoch', 80)])
+End of epoch 80 / 80     Time Taken: 93 sec
+learning rate = 0.0000000
