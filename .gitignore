@@ -45,3 +45,14 @@ test/.coverage
 test/data/legacy_serialized.pt
 *~
 .idea
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
